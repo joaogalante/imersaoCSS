@@ -4,57 +4,138 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   background-image: url('http://www.vanessametonini.com.br/imersaocss/a1/img/fundo.jpg');
   background-size: auto 100vh; 
-  font-family: Arial;
+  font-family: 'Ubuntu Mono', monospace;
   height: 100vh;
+  font-size: 12px;
 }
-
+/* Condição para o tamanho de tela. Acima de 400px carrega o estilo */
+@media (min-width: 400px) {
+  body{
+  font-size: 14px;
+  }
+}
+@media (min-width: 800px) {
+  body{
+  font-size: 18px;
+  }
+}
 header{
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .menu {
   background-color: white;
   position: fixed;
   top: 0px;
   width: 100vw;
 }
-
 .menu ul {
   display: flex;
   justify-content: space-around;
 }
-
 .menu li {
  list-style: none; 
 }
-
+.menu a {
+  display: block;
+  padding: 4px 20px;
+  transition: background-color 2s, color 2s;
+}
+.menu a:hover{
+  background-color: teal;
+  color: white;
+}
 a {
   color: teal;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
-
 .site-title {
   color: whitesmoke;
   text-align: center;
-}
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
 
+}
 .site-subtitle {
  font-style: italic;
  text-align: center;
+ font-family: 'Ubuntu', sans-serif;
+}
+.portfolio{
+  padding: 2em;
+  min-height: 100vh;
+}
+.portfolio h2{
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 1.5em;
+  font-size: 2em;
+  color: whitesmoke;
+}
+.portfolio .grid{
+  display: grid;
+  gap: 2em;
+  grid-template-columns: 240px;
+  justify-content: center;
+}
+/* Condição para o tamanho de tela. Acima de 400px carrega o estilo */
+@media (min-width: 600px) {
+  .portfolio .grid{
+    grid-template-columns: 240px 240px;
+  }
+}
+@media (min-width: 900px) {
+  .portfolio .grid{
+    grid-template-columns: repeat (3, 240px)
+  }
+}
+@media (min-width: 1200px) {
+  .portfolio .grid{
+    grid-template-columns: repeat (4, 240px)
+  }
+}
+.portfolio figure{
+  text-align: center;
+}
+.img-portfolio {
+  height: 140px;
+  width: 200px;
+  object-fit: contain;
+  border-radius: 20px;
 }
 
-.img-portfolio {
-  height: 200px;
-  width: 200px;
+.contato{
+  padding: 2em;
+ }
+.contato .icons{
+  text-align: center;
 }
+ .contato a {
+  color: whitesmoke;
+  font-size: 4em;
+
+ }
+
+ .contato a:hover{
+   text-shadow: 0px 0px 10px rgb(0, 255, 42);
+   text-decoration: none;
+ }
+.contato h2{
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 1.5em;
+  font-size: 2em;
+  color: whitesmoke;
+}
+
+/*
+font-family: 'Pacifico', cursive;
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Ubuntu Mono', monospace;
+*/
